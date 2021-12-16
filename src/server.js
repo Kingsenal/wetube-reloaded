@@ -9,7 +9,7 @@ const logger = (req, res, next) => {
     next();
 };
 
-const privateMiddleware = (req, res, next) => {
+const privateMiddleware = (req, res, next) => { // controller
     const url = req.url;
     if(url === "/protected") {
         return res.send("<h1>Not Allowed</h1>")
