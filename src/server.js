@@ -1,4 +1,5 @@
 import express from "express";
+import morgan  from "morgan";
 
 const PORT = 4000;
 
@@ -16,7 +17,7 @@ const privateMiddleware = (req, res, next) => { // controller
     }
     next();
 }
-
+//dd
 const handleHome = (req, res) => {
     return res.end();
 }
@@ -25,6 +26,7 @@ const handleProtected = (req, res) => {
     return res.send("Welcome")
 }
 
+app.use(morgan("dev"))
 app.use(logger);
 app.use(privateMiddleware);
 
